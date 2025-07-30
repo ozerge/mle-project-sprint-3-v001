@@ -1,9 +1,8 @@
-from fastapi import FastAPI, Body
-from fast_api_handler import FlatPriceHandler
+from fastapi import FastAPI
+from .fast_api_handler import FastApiHandler
 
 app = FastAPI()
-
-app.handler = FlatPriceHandler()
+app.handler = FastApiHandler()
 
 
 @app.post('/api/predict/')
