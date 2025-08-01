@@ -1,0 +1,21 @@
+# возьмем образ, который мы скачали ранее и в котором уже установлен python
+FROM python:3.11-slim
+
+# добавим label, используя переменную среды
+LABEL author=${AUTHOR}
+
+# копируем файлы в Docker
+# название директории внутри контейнера:
+COPY . ./real_estate
+
+# изменяем рабочую директорию Docker
+WORKDIR real_estate
+
+# инструкция для установки библиотек
+RUN pip3 install -r requirements.txt
+
+# инструкции для открытия порта, указанного в переменной среды
+EXPOSE ${APP_PORT}
+
+# команда запуска, учитывая порт из .env
+CMD uvicorn ml_service.main:app --port ${APP_PORT} --host 0.0.0.0

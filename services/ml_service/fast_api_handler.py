@@ -2,7 +2,7 @@ import os
 import joblib
 import numpy as np
 import pandas as pd
-from catboost import CatBoostRegressor
+# from catboost import CatBoostRegressor
 from .variables import MODEL_PATH, REQUIRED_MODEL_PARAMS
 
 
