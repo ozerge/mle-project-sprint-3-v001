@@ -28,10 +28,10 @@ cd ./services/
 # Команда запуска сервиса с помощью uvicorn:
 uvicorn ml_service.main:app --reload --port 8081 --host 0.0.0.0
 ```
-```bash
-# Для просмотра документации API и совершения тестовых запросов зайти на [http://localhost::8081/docs](http://localhost::8081/docs)<br>.
-# команда остановки микросервиса в терминале - нажатие клавиш Ctrl+C
-```
+Для просмотра документации API и совершения тестовых запросов зайти на
+[http://localhost::8081/docs](http://localhost::8081/docs)<br>
+Kоманда остановки микросервиса в терминале - нажатие клавиш Ctrl+C
+
 ### Пример curl-запроса к микросервису
 
 ```bash
@@ -80,9 +80,8 @@ docker container run --publish ${APP_PORT}:${APP_PORT} --volume=./models:/real_e
 # в фоновом режиме:
 docker container run -d --publish ${APP_PORT}:${APP_PORT} --volume=./models:/real_estate/models   --env-file .env price_predict:0
 ```
-```bash
-# Для просмотра документации API и совершения тестовых запросов зайти на [http://localhost::8081/docs](http://localhost::8081/docs)<br>.
-```
+Для просмотра документации API и совершения тестовых запросов зайти на [http://localhost::8081/docs](http://localhost::8081/docs)<br>
+
 ```bash
 # Проверка статуса контейнера:
 docker container ls -a | grep price_predict:0
@@ -143,9 +142,9 @@ docker compose up --build
 # в фоновом режиме:
 docker compose up --build -d
 ```
+Для просмотра документации API и совершения тестовых запросов зайти на [http://localhost::8081/docs](http://localhost::8081/docs)<br>.
+Команда остановки микросервиса в терминале - нажатие клавиш Ctrl+C
 ```bash
-# Для просмотра документации API и совершения тестовых запросов зайти на [http://localhost::8081/docs](http://localhost::8081/docs)<br>.
-# команда остановки микросервиса в терминале - нажатие клавиш Ctrl+C
 # остановка работающего в фоновом режиме:
 docker compose down
 ```
