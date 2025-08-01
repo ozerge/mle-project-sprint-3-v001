@@ -175,14 +175,17 @@ curl -X 'POST' \
 ```
 
 ## 4. Скрипт симуляции нагрузки
-Скрипт генерирует <...> запросов в течение <...> секунд ...
+Скрипт `generate_requests.py` генерирует 100 случайных запросов в течение 100 секунд.
 
-```
+```bash
 # команды необходимые для запуска скрипта
-...
+cd ~/mle_projects/mle-project-sprint-3-v001
+```
+```bash
+python3 generate_requests.py
 ```
 
 Адреса сервисов:
-- микросервис: http://localhost:<port>
-- Prometheus: ...
-- Grafana: ...
+- микросервис: http://localhost:8081/docs
+- Prometheus: http://localhost:9090/
+- Grafana: http://localhost:3000/
