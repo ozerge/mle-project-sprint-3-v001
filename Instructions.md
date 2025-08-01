@@ -29,7 +29,7 @@ cd ./services/
 uvicorn ml_service.main:app --reload --port 8081 --host 0.0.0.0
 ```
 ```bash
-# Для просмотра документации API и совершения тестовых запросов зайти на http://localhost::8081/docs .
+# Для просмотра документации API и совершения тестовых запросов зайти на [http://localhost::8081/docs](http://localhost::8081/docs)<br>.
 # команда остановки микросервиса в терминале - нажатие клавиш Ctrl+C
 ```
 ### Пример curl-запроса к микросервису
@@ -75,8 +75,13 @@ export $(grep -v '^#' .env | xargs)
 ```bash
 # Команда для запуска микросервиса в режиме docker:
 docker container run --publish ${APP_PORT}:${APP_PORT} --volume=./models:/real_estate/models   --env-file .env price_predict:0
+```
+```bash
 # в фоновом режиме:
 docker container run -d --publish ${APP_PORT}:${APP_PORT} --volume=./models:/real_estate/models   --env-file .env price_predict:0
+```
+```bash
+# Для просмотра документации API и совершения тестовых запросов зайти на [http://localhost::8081/docs](http://localhost::8081/docs)<br>.
 ```
 ```bash
 # Проверка статуса контейнера:
@@ -89,6 +94,7 @@ docker ps
 ```bash
 # Остановка контейнера:
 docker stop <ID контейнера>
+```
 ```bash
 # Удаление контейнера:
 docker rm <ID контейнера>
@@ -123,16 +129,50 @@ curl -X 'POST' \
 
 ```bash
 # команда перехода в нужную директорию
-
+cd ./services/
+```
+```bash
+# Загрузите переменные из .env:
+export $(grep -v '^#' .env | xargs)
+```
+```bash
 # команда для запуска микросервиса в режиме docker compose
-
+docker compose up --build
+```
+```bash
+# в фоновом режиме:
+docker compose up --build -d
+```
+```bash
+# Для просмотра документации API и совершения тестовых запросов зайти на [http://localhost::8081/docs](http://localhost::8081/docs)<br>.
+# команда остановки микросервиса в терминале - нажатие клавиш Ctrl+C
+# остановка работающего в фоновом режиме:
+docker compose down
 ```
 
 ### Пример curl-запроса к микросервису
 
 ```bash
 curl -X 'POST' \
-  'http://localhost:
+  'http://localhost:8081/api/predict/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "build_year": 1970,
+        "building_type_int": 6,
+        "latitude": 55.87674331665039,
+        "longitude": 37.570579528808594,
+        "ceiling_height": 2.64,
+        "flats_count": 84,
+        "floors_total": 12,
+        "has_elevator": true,
+        "floor": 11,
+        "kitchen_area": 11.0,
+        "living_area": 46.0,
+        "rooms": 3,
+        "is_apartment": false,
+        "total_area": 70.0
+    }'
 ```
 
 ## 4. Скрипт симуляции нагрузки

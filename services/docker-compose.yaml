@@ -1,0 +1,20 @@
+services:
+  # название сервиса 
+  main-app:  
+    # указываем путь к .env файлу с переменными окружения
+    env_file:
+      - ./.env
+    build:
+      dockerfile: Dockerfile_ml_service
+    # перенаправляем порты
+    # используем переменные из .env файла
+    ports:
+      - "${APP_PORT}:${APP_DOCKER_PORT}"
+    # указываем тома
+    volumes:
+        # тип тома 
+      - type: bind
+        # директория на ВМ
+        source: ./models
+        # директория в контейнере
+        target: /real_estate/models
