@@ -60,7 +60,7 @@ ___
      [./services/.env](services/.env)<br>
 
  - Инструкция по запуску, просмотру документации API и совершению тестовых запросов:
-    [Instructions.md](Instructions.md)<br>
+     [Instructions.md](Instructions.md)<br>
 
 #### Этап 3. Запуск сервисов для системы мониторинга
  - Файл для запуска сервиса в режиме Docker Compose c описанием сервисов
@@ -68,31 +68,31 @@ ___
     - Prometheus
     - Grafana
 
-   [./services/docker-compose.yaml](services/docker-compose.yaml)<br>
+     [./services/docker-compose.yaml](services/docker-compose.yaml)<br>
 
 - Cобственный конфиг Prometheus, который подключается в качестве тома в Docker:
-    [./services/prometheus/prometheus.yml](services/prometheus/prometheus.yml)<br>
+     [./services/prometheus/prometheus.yml](services/prometheus/prometheus.yml)<br>
    
    ##### Базовые метрики, предоставляемые prometheus_fastapi_instrumentator, экспортируются на страницу /metrics.
 
  - Инструкция по запуску, просмотру документации API и совершению тестовых запросов:
-    [Instructions.md](Instructions.md)<br>
+     [Instructions.md](Instructions.md)<br>
 
 #### Этап 4. Построение дашборда для мониторинга
  - Скрипт, который симулирует нагрузку на сервис:
-    [generate_requests.py](generate_requests.py)<br>
+     [generate_requests.py](generate_requests.py)<br>
 
  - Инструкция по запуску, просмотру документации API и совершению тестовых запросов:
-    [Instructions.md](Instructions.md)<br>
+     [Instructions.md](Instructions.md)<br>
 
 - Файл с дашбордом:
-   [dashboard.json](dashboard.json)<br>
+    [dashboard.json](dashboard.json)<br>
 
 - Файл со скриншотом дашборда:
-   [dashboard.jpg](dashboard.jpg)<br>
+    [dashboard.jpg](dashboard.jpg)<br>
    
 - Файл описания мониторинга:
-  [Monitoring.md](Monitoring.md)<br>
+    [Monitoring.md](Monitoring.md)<br>
 
 - Адреса сервисов:
   - Микросервис: http://localhost:8081/docs
