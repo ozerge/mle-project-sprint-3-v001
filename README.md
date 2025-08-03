@@ -6,3 +6,96 @@
 
 ___
 
+### Описание задачи
+
+Вывести в продакшен ML-модель для оценки цен на недвижимость.
+Cоблюсти следующие условия:
+- У коллег должна быть возможность получать предсказания модели онлайн.
+- Сервис с моделью должен быть устроен гибко — так, чтобы его можно было разворачивать на разных виртуальных машинах, где уже работают другие сервисы.
+- Предусмотреть мониторинг работы сервиса, чтобы своевременно узнавать о потенциальных рисках.
+
+### Задача инженера машинного обучения
+
+- Разработать FastAPI-микросервис.
+- Контейнеризовать его с помощью Docker.
+- Развернуть систему мониторинга, используя Prometheus и Grafana.
+- Разработать дашборд для мониторинга в Grafana.
+- Используйте модель, которую вы получили по результатам выполнения проекта второго спринта.
+
+### Инфраструктура и инструменты
+
+Для выполнения проекта вам понадобятся следующие инструменты:
+- Visual Studio Code;
+- FastAPI, Uvicorn;
+- Docker и Docker Compose;
+- Prometheus;
+- Grafana;
+- Python-библиотеки для экспортеров: prometheus_client, prometheus_fastapi_instrumentator;
+- Рекомендуется использовать виртуальную машину для проведения всех этапов.
+
+___
+
+### Микросервис для запуска ML-модели 
+
+#### Этап 1. Написание FastAPI-микросервиса  
+ - Код микросервиса: 
+    [./services/ml_service/main.py](services/ml_service/main.py)<br>
+   
+  ##### Микросервис принимает запросы и выдаёт предсказания модели в формате JSON, используя FastAPI и Uvicorn.  
+
+ - Класс-обработчик, который валидирует входные данные и возвращает предсказания:
+    [./services/ml_service/fast_api_handler.py](services/ml_service/fast_api_handler.py)<br>
+
+ - Необходимые библиотеки: 
+    [./services/requirements.txt](services/requirements.txt)<br>
+
+ - Инструкция по запуску, просмотра документации API и совершения тестовых запросов:
+    [Instructions.md](Instructions.md)<br>
+    
+#### Этап 2. Контейнеризация микросервиса  
+ - Dockerfile для сборки образа сервиса: 
+     [./services/Dockerfile_ml_service](services/Dockerfile_ml_service)<br>
+
+ - Переменные окружения, которые используются в Docker-контейнере:
+     [./services/.env](services/.env)<br>
+
+ - Инструкция по запуску, просмотра документации API и совершения тестовых запросов:
+    [Instructions.md](Instructions.md)<br>
+
+#### Этап 3. Запуск сервисов для системы мониторинга
+ - Файл для запуска сервиса в режиме Docker Compose c описанием сервисов
+    - FastAPI
+    - Prometheus
+    - Grafana
+
+   [./services/docker-compose.yaml](services/docker-compose.yaml)<br>
+
+- Cобственный конфиг Prometheus, который подключается в качестве тома в Docker:
+    [./services/prometheus/prometheus.yml](services/prometheus/prometheus.yml)<br>
+   
+   ##### Базовые метрики, предоставляемые prometheus_fastapi_instrumentator, экспортируются на страницу /metrics.
+
+ - Инструкция по запуску, просмотра документации API и совершения тестовых запросов:
+    [Instructions.md](Instructions.md)<br>
+
+#### Этап 4. Построение дашборда для мониторинга
+ - Скрипт, который симулирует нагрузку на сервис:
+    [./services/generate_requests.py](services/generate_requests.py)<br>
+
+ - Инструкция по запуску, просмотра документации API и совершения тестовых запросов:
+    [Instructions.md](Instructions.md)<br>
+
+- Файл с дашбордом:
+   [dashboard.json](dashboard.json)<br>
+
+- Файл со скриншотом дашборда:
+   [dashboard.jpg](dashboard.jpg)<br>
+   
+- Файл описания мониторинга -
+  [Monitoring.md](Monitoring.md)<br>
+
+- Адреса сервисов:
+  - Микросервис: http://localhost:8081/docs
+  - Prometheus: http://localhost:9090/
+  - Grafana: http://localhost:3000/
+  
