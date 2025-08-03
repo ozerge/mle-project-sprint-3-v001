@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ```
 ```bash
 # Команда перехода в директорию:
-cd ./services/
+cd ./services
 ```
 ```bash
 # Команда запуска сервиса с помощью uvicorn:
@@ -62,7 +62,7 @@ curl -X 'POST' \
 
 ```bash
 # Команда перехода в нужную директорию:
-cd ./services/
+cd ./services
 ```
 ```bash
 # Собираем образ:
@@ -128,11 +128,7 @@ curl -X 'POST' \
 
 ```bash
 # команда перехода в нужную директорию
-cd ./services/
-```
-```bash
-# Загрузите переменные из .env:
-export $(grep -v '^#' .env | xargs)
+cd ./services
 ```
 ```bash
 # команда для запуска микросервиса в режиме docker compose

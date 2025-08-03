@@ -110,7 +110,7 @@
           "refId": "A"
         }
       ],
-      "title": "Динамика предсказаний",
+      "title": "Частота запросов",
       "type": "timeseries"
     },
     {
@@ -170,7 +170,7 @@
           "refId": "A"
         }
       ],
-      "title": "Потребление RAM",
+      "title": "RAM",
       "type": "gauge"
     },
     {
@@ -452,12 +452,12 @@
     ]
   },
   "time": {
-    "from": "2025-08-02T05:48:27.549Z",
-    "to": "2025-08-02T06:48:27.549Z"
+    "from": "2025-08-02T06:04:10.358Z",
+    "to": "2025-08-02T06:34:10.358Z"
   },
   "timepicker": {},
   "timezone": "",
   "title": "MLE_monitoring_real_estate",
   "uid": "mle-dashboard",
-  "version": 12
+  "version": 14
 }
