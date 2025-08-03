@@ -47,12 +47,12 @@ curl -X 'POST' \
         "ceiling_height": 2.64,
         "flats_count": 84,
         "floors_total": 12,
-        "has_elevator": true,
+        "has_elevator": "true",
         "floor": 11,
         "kitchen_area": 11.0,
         "living_area": 46.0,
         "rooms": 3,
-        "is_apartment": false,
+        "is_apartment": "false",
         "total_area": 70.0
     }'
 ```
@@ -114,12 +114,12 @@ curl -X 'POST' \
         "ceiling_height": 2.64,
         "flats_count": 84,
         "floors_total": 12,
-        "has_elevator": true,
+        "has_elevator": "true",
         "floor": 11,
         "kitchen_area": 11.0,
         "living_area": 46.0,
         "rooms": 3,
-        "is_apartment": false,
+        "is_apartment": "false",
         "total_area": 70.0
     }'
 ```
@@ -160,12 +160,12 @@ curl -X 'POST' \
         "ceiling_height": 2.64,
         "flats_count": 84,
         "floors_total": 12,
-        "has_elevator": true,
+        "has_elevator": "true",
         "floor": 11,
         "kitchen_area": 11.0,
         "living_area": 46.0,
         "rooms": 3,
-        "is_apartment": false,
+        "is_apartment": "false",
         "total_area": 70.0
     }'
 ```

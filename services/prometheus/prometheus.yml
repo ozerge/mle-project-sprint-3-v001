@@ -1,6 +1,7 @@
 global:
-  # как часто собирать метрики?
+  # как часто собирать метрики
   scrape_interval: 15s
+  evaluation_interval: 15s
   
   # если за это время сборщик не собрал метрики, то процесс прерывается
   scrape_timeout: 10s
@@ -8,9 +9,9 @@ global:
 
 scrape_configs:
   # имя сборщика
-  - job_name: 'scrapping-main-app'
+  - job_name: 'scraping-main-app'
 
-    # c какой страницы собиарть метрики?
+    # c какой страницы собиарть метрики
     metrics_path: /metrics
     scheme: http
     
